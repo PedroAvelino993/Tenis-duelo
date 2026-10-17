@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Tênis Duelo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="icon-192.png">
+  <meta name="theme-color" content="#1f6b45">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Tênis">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+  <canvas id="quadra"></canvas>
+
+  <button id="pausar" class="pausar" aria-label="Pausar" hidden>❚❚</button>
+
+  <!-- Menu inicial -->
+  <section class="tela" id="menu">
+    <div class="caixa">
+      <h1>🎾 Tênis Duelo</h1>
+
+      <p class="rotulo">Modo</p>
+      <div class="opcoes" id="op-modo">
+        <button type="button" data-valor="robo" aria-pressed="true">🤖 Contra o robô</button>
+        <button type="button" data-valor="dois" aria-pressed="false">👥 2 jogadores</button>
+      </div>
+
+      <div id="bloco-nivel">
+        <p class="rotulo">Dificuldade do robô</p>
+        <div class="opcoes" id="op-nivel">
+          <button type="button" data-valor="facil" aria-pressed="false">Fácil</button>
+          <button type="button" data-valor="medio" aria-pressed="true">Médio</button>
+          <button type="button" data-valor="dificil" aria-pressed="false">Difícil</button>
+        </div>
+      </div>
+
+      <p class="rotulo">Partida</p>
+      <div class="opcoes" id="op-partida">
+        <button type="button" data-valor="1" aria-pressed="false">1 game</button>
+        <button type="button" data-valor="3" aria-pressed="true">3 games</button>
+        <button type="button" data-valor="6" aria-pressed="false">Set (6)</button>
+      </div>
+
+      <button type="button" class="jogar" id="jogar">Jogar</button>
+
+      <details class="como">
+        <summary>Como jogar</summary>
+        <ul>
+          <li><b>Arraste</b> o dedo na sua metade da tela para mexer o seu jogador.</li>
+          <li><b>1 toque</b> = forehand (bola normal).</li>
+          <li><b>2 toques rápidos</b> = ataque (bola bem mais rápida).</li>
+          <li>Bata quando a bola estiver perto do seu jogador. Andar para um lado na hora da batida manda a bola para aquele lado.</li>
+          <li>Se a bola quicar duas vezes do seu lado ou passar por você, o ponto é do outro.</li>
+          <li>Contagem do tênis: 15, 30, 40, game. Em 40 a 40 é "iguais" e precisa de vantagem.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pausa -->
+  <section class="tela" id="pausa" hidden>
+    <div class="caixa">
+      <h2>Pausado</h2>
+      <button type="button" class="jogar" id="continuar">Continuar</button>
+      <button type="button" class="secundario" id="sair">Sair para o menu</button>
+    </div>
+  </section>
+
+  <!-- Fim de jogo -->
+  <section class="tela" id="final" hidden>
+    <div class="caixa">
+      <h2 id="final-titulo"></h2>
+      <p id="final-placar" class="final-placar"></p>
+      <button type="button" class="jogar" id="revanche">Revanche</button>
+      <button type="button" class="secundario" id="voltar">Menu</button>
+    </div>
+  </section>
+
+  <script src="jogo.js"></script>
+</body>
+</html>

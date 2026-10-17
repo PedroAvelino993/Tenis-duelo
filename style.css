@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #1f6b45;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #14212b;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  touch-action: none;
+}
+
+.pausar {
+  position: fixed;
+  right: 10px;
+  top: calc(50% - 58px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Telas por cima do jogo */
+.tela {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  padding-top: calc(16px + env(safe-area-inset-top));
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  background: rgba(10, 40, 26, 0.72);
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.tela[hidden] {
+  display: none;
+}
+
+.caixa {
+  width: 100%;
+  max-width: 380px;
+  background: #fbfbf6;
+  border-radius: 20px;
+  padding: 22px 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  margin: auto;
+}
+
+h1 {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.rotulo {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5d6a63;
+  margin: 16px 0 6px;
+}
+
+.opcoes {
+  display: flex;
+  gap: 6px;
+}
+
+.opcoes button {
+  flex: 1;
+  font: inherit;
+  font-size: 0.92rem;
+  padding: 10px 6px;
+  border-radius: 12px;
+  border: 2px solid #d6ddd6;
+  background: white;
+  color: #14212b;
+  cursor: pointer;
+}
+
+.opcoes button[aria-pressed="true"] {
+  border-color: #1f6b45;
+  background: #e2f3e8;
+  font-weight: 800;
+}
+
+.jogar,
+.secundario {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 14px;
+  background: #e8f53a;
+  color: #14212b;
+  box-shadow: 0 4px 0 #b9c62a;
+  cursor: pointer;
+}
+
+.secundario {
+  margin-top: 10px;
+  background: transparent;
+  box-shadow: none;
+  border: 2px solid #d6ddd6;
+  font-size: 1rem;
+}
+
+.final-placar {
+  text-align: center;
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.como {
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+
+.como summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #1f6b45;
+}
+
+.como ul {
+  margin: 8px 0 0 18px;
+  display: grid;
+  gap: 4px;
+}
+
+button:focus-visible {
+  outline: 3px solid #1f6b45;
+  outline-offset: 2px;
+}
