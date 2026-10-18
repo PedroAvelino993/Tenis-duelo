@@ -680,10 +680,9 @@ canvas.addEventListener("touchmove", (e) => {
     d.y = t.clientY;
     const j = d.jogador;
     if (j.robo) continue;
-    // O jogador de cima vê a tela de cabeça para baixo
-    const sentido = opcoes.modo === "dois" && j.i === 1 ? -1 : 1;
-    j.alvoX += (dx / escala) * SENSIBILIDADE * sentido;
-    j.alvoY += (dy / escala) * SENSIBILIDADE * sentido;
+    // O boneco segue o dedo na tela, para os dois jogadores
+    j.alvoX += (dx / escala) * SENSIBILIDADE;
+    j.alvoY += (dy / escala) * SENSIBILIDADE;
   }
 }, { passive: false });
 

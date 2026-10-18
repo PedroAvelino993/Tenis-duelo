@@ -1,6 +1,6 @@
 // Guarda o jogo no aparelho para abrir sem internet.
 // Sempre tenta a versão mais nova primeiro; usa a cópia só se estiver offline.
-const CACHE_NAME = "tenis-v1";
+const CACHE_NAME = "tenis-v2";
 const ARQUIVOS = ["./", "./index.html", "./style.css", "./jogo.js", "./manifest.json", "./apple-touch-icon.png"];
 
 self.addEventListener("install", (evento) => {
